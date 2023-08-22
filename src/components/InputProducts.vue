@@ -10,6 +10,9 @@
             <label for="product-image">Ссылка на изображение</label>
             <input id="product-image" class="product-image" type="text" v-model="productImage">
 
+            <label for="product-price">Цена</label>
+            <input id="product-price" class="product-price" type="text" v-model="productImage">
+
             <input id="submit" class="submit" type="submit" value="Добавить">
         </form>
     </div>

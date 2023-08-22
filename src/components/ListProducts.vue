@@ -1,26 +1,20 @@
 <template>
     <div class="container">
     <ul class="product-list">
-        <li 
+        <ProductCard
         class="product" 
         v-for="product in this.$store.state.products" 
         :key="product.id"
+        :product = product
         @click="deleteProduct(product)"
-        >
-            <img :src="product.imageLink" alt="Изображение продукта" class="image">
-            <h4 class="name">{{ product.name }}</h4>
-            <p class="description">{{ product.description }}</p>
-        </li>
+        > </ProductCard>
 
-        <li
+        <ProductCard
         class="deleted-product" 
         v-for="product in this.$store.state.deletedProducts" 
         :key="product.id"
-        >
-            <img :src="product.imageLink" alt="Изображение продукта" class="image">
-            <h4 class="name"><s>{{ product.name }}</s></h4>
-            <p class="description">{{ product.description }}</p>
-        </li>
+        :product = product
+        > </ProductCard>
     </ul>
 
 
@@ -28,7 +22,11 @@
 </template>
 
 <script>
+import ProductCard from './ProductCard.vue'
     export default {
+        components: {
+            ProductCard
+        },
         methods: {
             deleteProduct(product) {
                 this.$store.commit('deleteProduct', product)
@@ -38,7 +36,5 @@
 </script>
 
 <style scoped>
-    .image {
-        max-height: 3em;
-    }
+
 </style>

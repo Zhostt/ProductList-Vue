@@ -1,21 +1,28 @@
 <template>
-    <div>
-        <img :src="imageLink" alt="Изображение продукта" class="image">
-        <h4 class="name">{{ name }}</h4>
-        <p class="description">{{ description }}</p>
-    </div>
+    <li>
+        <img :src="product.imageLink" alt="Изображение продукта" class="image">
+        <h4 class="name">{{ product.name }}</h4>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">{{ product.price }} рублей</p>
+    </li>
+        
+
 </template>
 
 <script>
     export default {
         props: {
-            name: String,
-            description: String,
-            imageLink:String,
+            product: Object,
         }
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+    .image {
+        max-height: 3em;
+    }
 
+    .deleted-product>.name{
+        text-decoration: line-through;
+    }
 </style>
