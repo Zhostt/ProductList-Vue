@@ -2,15 +2,15 @@
     <div class="container">
         <form class="product-input"  @submit="addProduct">
             <label for="product-name">Название</label>
-            <input id="product-name" type="text" v-model="productName">
+            <input id="product-name" class="product-name" type="text" v-model="productName">
 
             <label for="product-description">Описание</label>
-            <input id="product-description" type="textbox" v-model="productDescription">
+            <textarea id="product-description" class="product-description" type="textarea" v-model="productDescription"></textarea>
 
             <label for="product-image">Ссылка на изображение</label>
-            <input id="product-image" type="text" v-model="productImage">
-            
-            <input id="submit" type="submit" value="Добавить">
+            <input id="product-image" class="product-image" type="text" v-model="productImage">
+
+            <input id="submit" class="submit" type="submit" value="Добавить">
         </form>
     </div>
 </template>
@@ -22,6 +22,7 @@
             productName: '',
             productDescription: '',
             productImage: '',
+            active: true,
             }
         },
 
@@ -33,7 +34,7 @@
                     id,
                     name: this.productName,
                     description: this.productDescription,
-                    image: this.productImage,
+                    imageLink: this.productImage,
                 }
                 this.$store.commit('addProduct', newProduct);
                 this.productName = '';
