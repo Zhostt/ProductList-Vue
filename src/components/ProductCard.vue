@@ -22,19 +22,38 @@
 
 <style scoped>
     .product {
-
         display: flex;
-        border: 1px solid purple;
         background-color: #FFFFFF;
-
+        margin: 2% 0;
+        border-radius: 1.5em;
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
     }
+
+    .text-block {
+        flex-grow: 6;
+        max-width: 50%;
+        word-wrap: break-word;
+    }
+
+    .description {
+        max-height: 10em;
+        overflow-y: auto;
+    }
+
+    .price {
+        text-align: right;
+        flex-grow: 4;
+        margin: 0.83em 5%;
+    }
+
     .image {
-        padding: 3em; ;
-        max-width: 4em;
-    }
-
-    .description{
-        overflow-wrap: break-word;
+        flex-shrink: 1;
+        padding: 5% 5%;
+        max-width: 10vw;
+        max-height: 10vh;
+        height: 100%;
     }
 
     .deleted-product>*>.name{

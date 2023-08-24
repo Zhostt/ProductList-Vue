@@ -1,23 +1,20 @@
 <template>
     <div class="container">
-    <h1 class="products-header">Список продуктов</h1>
-    <ul class="product-list">
-        <ProductCard
-        v-for="product in this.$store.state.products" 
-        :key="product.id"
-        :product = product
-        @click="deleteProduct(product)"
-        > </ProductCard>
+        <ul class="product-list">
+            <ProductCard
+            v-for="product in this.$store.state.products" 
+            :key="product.id"
+            :product = product
+            @click="deleteProduct(product)"
+            > </ProductCard>
 
-        <ProductCard
-        class="deleted-product" 
-        v-for="product in this.$store.state.deletedProducts" 
-        :key="product.id"
-        :product = product
-        > </ProductCard>
-    </ul>
-
-
+            <ProductCard
+            class="deleted-product" 
+            v-for="product in this.$store.state.deletedProducts" 
+            :key="product.id"
+            :product = product
+            > </ProductCard>
+        </ul>
     </div>
 </template>
 
@@ -36,13 +33,19 @@ import ProductCard from './ProductCard.vue'
 </script>
 
 <style scoped>
-    .products-header {
 
-    }
     .product-list {
-
         padding-left: 0;
+        width: 100%;
     }
+    .product {
+
+    }
+    .deleted-product {
+        opacity: 30%;
+        border: 1px solid red;
+    }
+
 
 
 </style>

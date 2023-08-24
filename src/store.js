@@ -2,29 +2,37 @@ import {createStore} from 'vuex'
 import createPersistedState from 'vuex-persistedstate';
 
 const defaultimageLink = './product-icon.svg'
+const [product1, product2, product3] = [
+  './Product1.webp',
+  './Product2.webp',
+  './Product3.webp'
+]
 
 export default createStore({
     plugins: [createPersistedState({storage: window.sessionStorage})],
     state: {
+      modalVisible: false,
       products: [
         {
           id: 1, 
-          name: 'Product 1', 
-          description: 'Product 1 descr', 
-          imageLink:'https://media.istockphoto.com/id/185278433/photo/black-digital-slr-camera-in-a-white-background.jpg?s=612x612&w=0&k=20&c=OOCbhvOF0W-eVhhrm-TxbgLfbKhFfs4Lprjd7hiQBNU=', 
-          price: 120, 
+          name: 'PENTAX KF body', 
+          description: 'Зеркальный фотоаппарат черного цвета', 
+          imageLink: product1, 
+          price: 113490, 
           active:true 
         },
-        {id: 2, name: 'Product 2', description: 'Product 2 descr', imageLink: defaultimageLink, price: 10, active:true}
+        {id: 2, name: 'PENTAX K-3 Mark III Body', description: 'Зеркальная фотокамера серебристого цвета', imageLink: product2, price: 156400, active:true}
       ],
       deletedProducts: [
-      {id: 3, name: 'Product 3', description: 'Product 3 descr', imageLink: defaultimageLink, price: 100, active:false}
+      {id: 3, name: 'Canon EOS R6 Mark II Body', description: 'Фотоаппарат черного цвета', imageLink: product3, price: 235900, active:false}
       ]
     },
     mutations: {
       addProduct(state,product) {
         const newProduct = {...product}
-        if (newProduct.imageLink=== ''){
+        try {
+          new URL(newProduct.imageLink) // check if recieved value is url
+        } catch (_) {
           newProduct.imageLink = defaultimageLink
         }
         state.products.unshift(newProduct)
@@ -34,6 +42,10 @@ export default createStore({
         state.products = state.products.filter((product) => deletedProduct.id !== product.id)
         newDeletedProduct.active = false
         state.deletedProducts.unshift(newDeletedProduct)
+      },
+
+      toggleModal(state) {
+        state.modalVisible = !state.modalVisible;
       }
     },
     actions: {
