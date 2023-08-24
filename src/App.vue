@@ -75,7 +75,7 @@ body {
 @media only screen and (max-width: 768px) {
       .app-container {
         margin: 0;
-        padding: 10%;
+        padding: 0 3%;
         font-size: 12px;
     }
 }
