@@ -1,8 +1,8 @@
 <template>
     <div class="container">
+    <h1 class="products-header">Список продуктов</h1>
     <ul class="product-list">
         <ProductCard
-        class="product" 
         v-for="product in this.$store.state.products" 
         :key="product.id"
         :product = product
@@ -36,5 +36,13 @@ import ProductCard from './ProductCard.vue'
 </script>
 
 <style scoped>
+    .products-header {
+
+    }
+    .product-list {
+
+        padding-left: 0;
+    }
+
 
 </style>

@@ -1,17 +1,28 @@
 <template>
     <div class="container">
+        <h1 class="input-header">Добавить продукт</h1>
         <form class="product-input"  @submit="addProduct">
-            <label for="product-name">Название</label>
-            <input id="product-name" class="product-name" type="text" v-model="productName">
+            <div class="input-group">
+                <label for="product-name">Название</label>
+                <input id="product-name" class="product-name" type="text" v-model="productName" required>
+            </div>
 
-            <label for="product-description">Описание</label>
-            <textarea id="product-description" class="product-description" type="textarea" v-model="productDescription"></textarea>
+            <div class="input-group">
+                <label for="product-price">Цена</label>
+                <input id="product-price" class="product-price" type="number" v-model="productPrice" required>
+            </div>
 
-            <label for="product-image">Ссылка на изображение</label>
-            <input id="product-image" class="product-image" type="text" v-model="productImage">
+            
+            <div class="input-group">
+                <label for="product-description">Описание</label>
+                <textarea id="product-description" class="product-description" type="textarea" v-model="productDescription" required></textarea>
+            </div>
 
-            <label for="product-price">Цена</label>
-            <input id="product-price" class="product-price" type="text" v-model="productImage">
+            <div class="input-group">
+                <label for="product-image">Ссылка на изображение</label>
+                <input id="product-image" class="product-image" type="text" v-model="productImage">
+            </div>
+
 
             <input id="submit" class="submit" type="submit" value="Добавить">
         </form>
@@ -25,6 +36,7 @@
             productName: '',
             productDescription: '',
             productImage: '',
+            productPrice: null,
             active: true,
             }
         },
@@ -38,16 +50,37 @@
                     name: this.productName,
                     description: this.productDescription,
                     imageLink: this.productImage,
+                    price: this.productPrice,
                 }
                 this.$store.commit('addProduct', newProduct);
                 this.productName = '';
                 this.productDescription = '';
                 this.productImage = '';
+                this.productPrice = null;
             }
         }
     }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+    .input-header {
+        }
+
+    .product-input {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 0;
+        border: 1px solid red
+    }
+    .input-group>label {
+        text-align: start;
+    }
+
 
 </style>

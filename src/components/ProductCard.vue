@@ -1,9 +1,12 @@
 <template>
-    <li>
+    <li class="product">
         <img :src="product.imageLink" alt="Изображение продукта" class="image">
-        <h4 class="name">{{ product.name }}</h4>
-        <p class="description">{{ product.description }}</p>
-        <p class="price">{{ product.price }} рублей</p>
+        <div class="text-block">
+            <h2 class="name">{{ product.name }}</h2>
+            <p class="description">{{ product.description }}</p>
+        </div>
+        <h2 class="price">{{ product.price }} ₽</h2>
+
     </li>
         
 
@@ -18,11 +21,24 @@
 </script>
 
 <style scoped>
+    .product {
+
+        display: flex;
+        border: 1px solid purple;
+        background-color: #FFFFFF;
+
+    }
     .image {
-        max-height: 3em;
+        padding: 3em; ;
+        max-width: 4em;
     }
 
-    .deleted-product>.name{
+    .description{
+        overflow-wrap: break-word;
+    }
+
+    .deleted-product>*>.name{
         text-decoration: line-through;
     }
+
 </style>
