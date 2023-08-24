@@ -33,15 +33,18 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #494949;
+  font-size: 20px
+}
+
+body {
   background-color: #E8ECF3;
-  font-size: 16px;
-  height: 100%;
 }
 
 .app-container {
   max-width: 1140px;
   padding: 0 10%;
   margin: 0 20%;
+
 }
 
 .header-container{
@@ -67,21 +70,21 @@ export default {
       .app-container {
         padding: 5% 10% 0 10%;
         margin: 0;
-        font-size: 12px;
+        font-size: 14px;
         }
     }
 @media only screen and (max-width: 768px) {
       .app-container {
         padding: 5% 10% 0 10%;
         margin: 0;
-        font-size: 10px;
+        font-size: 12px;
     }
 }
 @media only screen and (max-width: 300px) {
       .app-container {
       padding: 5% 10% 0 10%;
       margin: 0;
-      font-size: 8px;
+      font-size: 10px;
     }
 }
 
