@@ -140,6 +140,11 @@ import { mapState } from 'vuex';
         border-radius: 10px;
     }
 
+    .input-field:focus {
+        border: 3px solid #8BADE9;
+        outline:none;
+    }
+
     .product-description {
         resize: vertical;
         height: 10vh;
@@ -176,7 +181,7 @@ import { mapState } from 'vuex';
     }
     @media only screen and (min-width: 1140px) {
         .main-block {
-                width: 40vw;
+                width: 30vw;
                 min-width: 0;
         }
     }
