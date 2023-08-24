@@ -5,7 +5,7 @@
             <h3 class="name">{{ product.name }}</h3>
             <p class="description">{{ product.description }}</p>
         </div>
-        <h3 class="price">{{ product.price }} ₽</h3>
+        <h3 class="price">{{ product.price }} Р</h3>
 
     </li>
         

@@ -44,7 +44,6 @@ body {
   max-width: 1140px;
   padding: 0 10%;
   margin: 0 20%;
-
 }
 
 .header-container{
@@ -70,23 +69,20 @@ body {
       .app-container {
         padding: 5% 10% 0 10%;
         margin: 0;
-        font-size: 14px;
+        font-size: 12px;
         }
     }
 @media only screen and (max-width: 768px) {
       .app-container {
-        padding: 5% 10% 0 10%;
         margin: 0;
         font-size: 12px;
     }
+    .app-container {
+        padding: 5% 0;
+        margin: 0;
+      }
 }
-@media only screen and (max-width: 300px) {
-      .app-container {
-      padding: 5% 10% 0 10%;
-      margin: 0;
-      font-size: 10px;
-    }
-}
+
 
 @media only screen and (max-width: 720px) {
         .main-block {

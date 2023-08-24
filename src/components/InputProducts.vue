@@ -135,7 +135,7 @@ import { mapState } from 'vuex';
 
     .input-field {
         height: 4vh;
-        font-size: 1.4em;
+        font-size: 1.3em;
         border: 0;
         border-radius: 10px;
     }
@@ -151,7 +151,7 @@ import { mapState } from 'vuex';
     }
 
     .submit {
-        font-size: 1.5em;
+        font-size: 1.2em;
         color:white;
         background-color: #8BADE9;
         height: 7vh;
@@ -161,7 +161,7 @@ import { mapState } from 'vuex';
     }
 
     .decline {
-        font-size: 1.5em;
+        font-size: 1.2em;
         height: 7vh;
         margin: 5% 0 10%  0;
         border-radius: 1em;
