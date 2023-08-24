@@ -75,22 +75,19 @@ body {
 @media only screen and (max-width: 768px) {
       .app-container {
         margin: 0;
+        padding: 10%;
         font-size: 12px;
     }
-    .app-container {
-        padding: 5% 0;
-        margin: 0;
-      }
 }
 
 
 @media only screen and (max-width: 720px) {
-        .main-block {
-            width:90%;
+    .input-block {
+            width:80%;
         }
     }
 @media only screen and (min-width: 720px) {
-    .input-block {
+      .input-block {
             width:20%;
             min-width:0;
     }
